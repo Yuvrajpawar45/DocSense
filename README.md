@@ -2,7 +2,7 @@
 
 A production-grade Retrieval-Augmented Generation (RAG) system. Upload PDFs or paste text, then ask questions and get answers with full source citations.
 
-**Built with:** sentence-transformers · FAISS · Groq Llama 3 (FREE) · FastAPI · Vanilla HTML/CSS/JS
+**Built with:** sentence-transformers · FAISS · Groq Llama 3 (FREE) · FastAPI · Streamlit
 
 ---
 
@@ -12,7 +12,7 @@ A production-grade Retrieval-Augmented Generation (RAG) system. Upload PDFs or p
 User Question
      │
      ▼
-[ index.html ]  ──HTTP──►  [ FastAPI /query ]
+[ app.py ]  ──HTTP──►  [ FastAPI /query ]
                                    │
                ┌───────────────────┼────────────────────┐
                ▼                   ▼                    ▼
@@ -28,7 +28,7 @@ User Question
 | Vector Store | `FAISS` — local, no cloud needed |
 | LLM | Llama 3 8B via **Groq API (FREE)** |
 | Backend | `FastAPI` + `uvicorn` |
-| Frontend | Pure HTML / CSS / JavaScript |
+| Frontend | Streamlit |
 | PDF Parsing | `PyMuPDF (fitz)` |
 
 ---
@@ -67,7 +67,7 @@ uvicorn backend.api:app --reload --port 8000
 ```
 ✅ You should see: `Uvicorn running on http://127.0.0.1:8000`
 
-### 5. Open the frontend
+### 5. Start the frontend (Terminal 2)
 Just **double-click** `frontend/index.html` in File Explorer — opens in your browser.
 
 Or navigate to it manually in Chrome: `Ctrl+O` → select `frontend/index.html`
